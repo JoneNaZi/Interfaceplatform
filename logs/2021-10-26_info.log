@@ -1,0 +1,378 @@
+2021-10-26 17:39:54.099 | ERROR    | app.views:register:193 - (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com', None, 0, 0, 0, 0, '2021-10-26 17:39:31.678330', 0, None)]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)
+Traceback (most recent call last):
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\base.py", line 1764, in _execute_context
+    cursor, statement, parameters, context
+    ©¦       ©¦          ©¦           ©¸ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x00000248E734C308>
+    ©¦       ©¦          ©¸ ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com',...
+    ©¦       ©¸ 'INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) V...
+    ©¸ <sqlite3.Cursor object at 0x00000248E7533420>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+    ©¦      ©¦       ©¦          ©¸ ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com',...
+    ©¦      ©¦       ©¸ 'INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) V...
+    ©¦      ©¸ <method 'execute' of 'sqlite3.Cursor' objects>
+    ©¸ <sqlite3.Cursor object at 0x00000248E7533420>
+
+sqlite3.IntegrityError: UNIQUE constraint failed: users.username
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    ©¦    ©¸ <function Thread._bootstrap_inner at 0x00000248E29CB318>
+    ©¸ <Thread(Thread-2, started daemon 2512140076520)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 926, in _bootstrap_inner
+    self.run()
+    ©¦    ©¸ <function Thread.run at 0x00000248E29CB0D8>
+    ©¸ <Thread(Thread-2, started daemon 2512140076520)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    ©¦    ©¦        ©¦    ©¦        ©¦    ©¸ {}
+    ©¦    ©¦        ©¦    ©¦        ©¸ <Thread(Thread-2, started daemon 2512140076520)>
+    ©¦    ©¦        ©¦    ©¸ (<gevent._socket3.socket at 0x248e744bac8 object, fd=1284, family=2, type=1, proto=0>, ('127.0.0.1', 51293))
+    ©¦    ©¦        ©¸ <Thread(Thread-2, started daemon 2512140076520)>
+    ©¦    ©¸ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x00000248E7471748>>
+    ©¸ <Thread(Thread-2, started daemon 2512140076520)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    ©¦    ©¦              ©¦        ©¸ ('127.0.0.1', 51293)
+    ©¦    ©¦              ©¸ <gevent._socket3.socket at 0x248e744bac8 object, fd=1284, family=2, type=1, proto=0>
+    ©¦    ©¸ <function BaseServer.finish_request at 0x00000248E2FAC708>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000248E7471748>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ©¦    ©¦                   ©¦        ©¦               ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000248E7471748>
+    ©¦    ©¦                   ©¦        ©¸ ('127.0.0.1', 51293)
+    ©¦    ©¦                   ©¸ <gevent._socket3.socket at 0x248e744bac8 object, fd=1284, family=2, type=1, proto=0>
+    ©¦    ©¸ <class 'werkzeug.serving.WSGIRequestHandler'>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000248E7471748>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 720, in __init__
+    self.handle()
+    ©¦    ©¸ <function WSGIRequestHandler.handle at 0x00000248E30E2798>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000248E7079688>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 329, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+         ©¦                      ©¦      ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000248E7079688>
+         ©¦                      ©¸ <function BaseHTTPRequestHandler.handle at 0x00000248E30DF558>
+         ©¸ <class 'http.server.BaseHTTPRequestHandler'>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\http\server.py", line 426, in handle
+    self.handle_one_request()
+    ©¦    ©¸ <function WSGIRequestHandler.handle_one_request at 0x00000248E30E2948>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000248E7079688>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 364, in handle_one_request
+    return self.run_wsgi()
+           ©¦    ©¸ <function WSGIRequestHandler.run_wsgi at 0x00000248E30E2708>
+           ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000248E7079688>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+    ©¦       ©¦    ©¦      ©¸ <werkzeug.debug.DebuggedApplication object at 0x00000248E72A26C8>
+    ©¦       ©¦    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000248E7471748>
+    ©¦       ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000248E7079688>
+    ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000248E747DC18>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 296, in execute
+    for data in application_iter:
+                ©¸ <generator object DebuggedApplication.debug_application at 0x00000248E7476648>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ©¦    ©¦   ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000248E747DAF8>
+               ©¦    ©¦   ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1284>, 'wsgi.errors': <_io.TextIOW...
+               ©¦    ©¸ <Flask 'app'>
+               ©¸ <werkzeug.debug.DebuggedApplication object at 0x00000248E72A26C8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           ©¦    ©¦        ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000248E747DAF8>
+           ©¦    ©¦        ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1284>, 'wsgi.errors': <_io.TextIOW...
+           ©¦    ©¸ <function Flask.wsgi_app at 0x00000248E38A2708>
+           ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               ©¦    ©¸ <function Flask.full_dispatch_request at 0x00000248E389DDC8>
+               ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         ©¦    ©¸ <function Flask.dispatch_request at 0x00000248E389DD38>
+         ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           ©¦    ©¦              ©¦    ©¦           ©¦   ©¸ {}
+           ©¦    ©¦              ©¦    ©¦           ©¸ <Request 'http://127.0.0.1:5002/register' [POST]>
+           ©¦    ©¦              ©¦    ©¸ 'register'
+           ©¦    ©¦              ©¸ <Rule '/register' (GET, OPTIONS, HEAD, POST) -> register>
+           ©¦    ©¸ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'app'>>, 'specs': <function View.as_view.<locals>.vie...
+           ©¸ <Flask 'app'>
+
+> File "D:\pycharmProjects\interfaceplatform\FXTest\app\views.py", line 184, in register
+    db.session.commit()
+    ©¦  ©¦       ©¸ <function commit at 0x00000248E4B8ED38>
+    ©¦  ©¸ <sqlalchemy.orm.scoping.scoped_session object at 0x00000248E54ACC08>
+    ©¸ <SQLAlchemy engine=sqlite:///D:\pycharmProjects\interfaceplatform\FXTest\data.sqlite>
+
+  File "<string>", line 2, in commit
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+    ©¦    ©¦            ©¦               ©¦    ©¸ False
+    ©¦    ©¦            ©¦               ©¸ <sqlalchemy.orm.session.SignallingSession object at 0x00000248E750BB48>
+    ©¦    ©¦            ©¸ <function SessionTransaction.commit at 0x00000248E4B85798>
+    ©¦    ©¸ <sqlalchemy.orm.session.SessionTransaction object at 0x00000248E751B208>
+    ©¸ <sqlalchemy.orm.session.SignallingSession object at 0x00000248E750BB48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\session.py", line 826, in commit
+    self._prepare_impl()
+    ©¦    ©¸ <function SessionTransaction._prepare_impl at 0x00000248E4B85708>
+    ©¸ <sqlalchemy.orm.session.SessionTransaction object at 0x00000248E751B208>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\session.py", line 805, in _prepare_impl
+    self.session.flush()
+    ©¦    ©¦       ©¸ <function Session.flush at 0x00000248E4B8D558>
+    ©¦    ©¸ <sqlalchemy.orm.session.SignallingSession object at 0x00000248E750BB48>
+    ©¸ <sqlalchemy.orm.session.SessionTransaction object at 0x00000248E751B208>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\session.py", line 3260, in flush
+    self._flush(objects)
+    ©¦    ©¦      ©¸ None
+    ©¦    ©¸ <function Session._flush at 0x00000248E4B8D708>
+    ©¸ <sqlalchemy.orm.session.SignallingSession object at 0x00000248E750BB48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\session.py", line 3400, in _flush
+    transaction.rollback(_capture_exception=True)
+    ©¦           ©¸ <function SessionTransaction.rollback at 0x00000248E4B85828>
+    ©¸ <sqlalchemy.orm.session.SessionTransaction object at 0x00000248E7537448>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\util\langhelpers.py", line 72, in __exit__
+    with_traceback=exc_tb,
+                   ©¸ <traceback object at 0x00000248E7546688>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\session.py", line 3360, in _flush
+    flush_context.execute()
+    ©¦             ©¸ <function UOWTransaction.execute at 0x00000248E4B7D4C8>
+    ©¸ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x00000248E71B3C08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 453, in execute
+    rec.execute(self)
+    ©¦   ©¦       ©¸ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x00000248E71B3C08>
+    ©¦   ©¸ <function SaveUpdateAll.execute at 0x00000248E4B7DDC8>
+    ©¸ SaveUpdateAll(mapped class User->users)
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
+    uow,
+    ©¸ <sqlalchemy.orm.unitofwork.UOWTransaction object at 0x00000248E71B3C08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\persistence.py", line 247, in save_obj
+    insert,
+    ©¸ <generator object _collect_insert_commands at 0x00000248E7528C48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\orm\persistence.py", line 1222, in _emit_insert_statements
+    execution_options=execution_options,
+                      ©¸ {'compiled_cache': {(<sqlalchemy.dialects.sqlite.pysqlite.SQLiteDialect_pysqlite object at 0x00000248E5996848>, ('0', <class ...
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\base.py", line 1578, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+           ©¦    ©¦     ©¦             ©¦               ©¸ {'compiled_cache': {(<sqlalchemy.dialects.sqlite.pysqlite.SQLiteDialect_pysqlite object at 0x00000248E5996848>, ('0', <class ...
+           ©¦    ©¦     ©¦             ©¸ immutabledict({})
+           ©¦    ©¦     ©¸ ({'password': 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', 'username': '...
+           ©¦    ©¸ <sqlalchemy.engine.base.Connection object at 0x00000248E751B0C8>
+           ©¸ <bound method ClauseElement._execute_on_connection of <sqlalchemy.sql.dml.Insert object at 0x00000248E7546988>>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\sql\elements.py", line 321, in _execute_on_connection
+    self, multiparams, params, execution_options
+    ©¦     ©¦            ©¦       ©¸ {'compiled_cache': {(<sqlalchemy.dialects.sqlite.pysqlite.SQLiteDialect_pysqlite object at 0x00000248E5996848>, ('0', <class ...
+    ©¦     ©¦            ©¸ immutabledict({})
+    ©¦     ©¸ ({'password': 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', 'username': '...
+    ©¸ <sqlalchemy.sql.dml.Insert object at 0x00000248E7546988>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\base.py", line 1457, in _execute_clauseelement
+    cache_hit=cache_hit,
+              ©¸ symbol('CACHE_MISS')
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\base.py", line 1807, in _execute_context
+    e, statement, parameters, cursor, context
+       ©¦          ©¦           ©¦       ©¸ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x00000248E734C308>
+       ©¦          ©¦           ©¸ <sqlite3.Cursor object at 0x00000248E7533420>
+       ©¦          ©¸ ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com',...
+       ©¸ 'INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) V...
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+    ©¦                                    ©¦                  ©¸ IntegrityError('UNIQUE constraint failed: users.username')
+    ©¦                                    ©¸ (<class 'sqlite3.IntegrityError'>, IntegrityError('UNIQUE constraint failed: users.username'), <traceback object at 0x0000024...
+    ©¸ IntegrityError('(sqlite3.IntegrityError) UNIQUE constraint failed: users.username')
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\util\compat.py", line 211, in raise_
+    raise exception
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\base.py", line 1764, in _execute_context
+    cursor, statement, parameters, context
+    ©¦       ©¦          ©¦           ©¸ <sqlalchemy.dialects.sqlite.base.SQLiteExecutionContext object at 0x00000248E734C308>
+    ©¦       ©¦          ©¸ ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com',...
+    ©¦       ©¸ 'INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) V...
+    ©¸ <sqlite3.Cursor object at 0x00000248E7533420>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\sqlalchemy\engine\default.py", line 717, in do_execute
+    cursor.execute(statement, parameters)
+    ©¦      ©¦       ©¦          ©¸ ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com',...
+    ©¦      ©¦       ©¸ 'INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) V...
+    ©¦      ©¸ <method 'execute' of 'sqlite3.Cursor' objects>
+    ©¸ <sqlite3.Cursor object at 0x00000248E7533420>
+
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: users.username
+[SQL: INSERT INTO users (username, password, user_email, jobnum, status, is_login, is_sper, is_free, freetime, err_num, work_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('admin', 'pbkdf2:sha256:150000$7RXDSmPi$c45ec5b06190cc852c2a7bf677ad6bf982bab2cd336834f67b89f09bf978dd00', '123@online.com', None, 0, 0, 0, 0, '2021-10-26 17:39:31.678330', 0, None)]
+(Background on this error at: http://sqlalche.me/e/14/gkpj)
+2021-10-26 17:43:44.690 | ERROR    | app.views:register:197 - The curent application was not configured with Flask-Mail
+Traceback (most recent call last):
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 508, in connect
+    return Connection(app.extensions['mail'])
+           ©¦          ©¸ <Flask 'app'>
+           ©¸ <class 'flask_mail.Connection'>
+
+KeyError: 'mail'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    ©¦    ©¸ <function Thread._bootstrap_inner at 0x000001AA0ACBB318>
+    ©¸ <Thread(Thread-4, started daemon 1829914592744)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 926, in _bootstrap_inner
+    self.run()
+    ©¦    ©¸ <function Thread.run at 0x000001AA0ACBB0D8>
+    ©¸ <Thread(Thread-4, started daemon 1829914592744)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    ©¦    ©¦        ©¦    ©¦        ©¦    ©¸ {}
+    ©¦    ©¦        ©¦    ©¦        ©¸ <Thread(Thread-4, started daemon 1829914592744)>
+    ©¦    ©¦        ©¦    ©¸ (<gevent._socket3.socket at 0x1aa0f81b588 object, fd=1312, family=2, type=1, proto=0>, ('127.0.0.1', 56252))
+    ©¦    ©¦        ©¸ <Thread(Thread-4, started daemon 1829914592744)>
+    ©¦    ©¸ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000001AA0F76FB48>>
+    ©¸ <Thread(Thread-4, started daemon 1829914592744)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    ©¦    ©¦              ©¦        ©¸ ('127.0.0.1', 56252)
+    ©¦    ©¦              ©¸ <gevent._socket3.socket at 0x1aa0f81b588 object, fd=1312, family=2, type=1, proto=0>
+    ©¦    ©¸ <function BaseServer.finish_request at 0x000001AA0B2BC708>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000001AA0F76FB48>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ©¦    ©¦                   ©¦        ©¦               ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000001AA0F76FB48>
+    ©¦    ©¦                   ©¦        ©¸ ('127.0.0.1', 56252)
+    ©¦    ©¦                   ©¸ <gevent._socket3.socket at 0x1aa0f81b588 object, fd=1312, family=2, type=1, proto=0>
+    ©¦    ©¸ <class 'werkzeug.serving.WSGIRequestHandler'>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000001AA0F76FB48>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 720, in __init__
+    self.handle()
+    ©¦    ©¸ <function WSGIRequestHandler.handle at 0x000001AA0B3F2798>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000001AA0F761648>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 329, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+         ©¦                      ©¦      ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000001AA0F761648>
+         ©¦                      ©¸ <function BaseHTTPRequestHandler.handle at 0x000001AA0B3EF558>
+         ©¸ <class 'http.server.BaseHTTPRequestHandler'>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\http\server.py", line 426, in handle
+    self.handle_one_request()
+    ©¦    ©¸ <function WSGIRequestHandler.handle_one_request at 0x000001AA0B3F2948>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000001AA0F761648>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 364, in handle_one_request
+    return self.run_wsgi()
+           ©¦    ©¸ <function WSGIRequestHandler.run_wsgi at 0x000001AA0B3F2708>
+           ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000001AA0F761648>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+    ©¦       ©¦    ©¦      ©¸ <werkzeug.debug.DebuggedApplication object at 0x000001AA0F5A88C8>
+    ©¦       ©¦    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000001AA0F76FB48>
+    ©¦       ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000001AA0F761648>
+    ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000001AA0F7BD318>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 296, in execute
+    for data in application_iter:
+                ©¸ <generator object DebuggedApplication.debug_application at 0x000001AA0F833E48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ©¦    ©¦   ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001AA0F78CDC8>
+               ©¦    ©¦   ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1312>, 'wsgi.errors': <_io.TextIOW...
+               ©¦    ©¸ <Flask 'app'>
+               ©¸ <werkzeug.debug.DebuggedApplication object at 0x000001AA0F5A88C8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           ©¦    ©¦        ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000001AA0F78CDC8>
+           ©¦    ©¦        ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1312>, 'wsgi.errors': <_io.TextIOW...
+           ©¦    ©¸ <function Flask.wsgi_app at 0x000001AA0BBB1708>
+           ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               ©¦    ©¸ <function Flask.full_dispatch_request at 0x000001AA0BBADDC8>
+               ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         ©¦    ©¸ <function Flask.dispatch_request at 0x000001AA0BBADD38>
+         ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           ©¦    ©¦              ©¦    ©¦           ©¦   ©¸ {}
+           ©¦    ©¦              ©¦    ©¦           ©¸ <Request 'http://127.0.0.1:5002/register' [POST]>
+           ©¦    ©¦              ©¦    ©¸ 'register'
+           ©¦    ©¦              ©¸ <Rule '/register' (OPTIONS, GET, HEAD, POST) -> register>
+           ©¦    ©¸ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'app'>>, 'specs': <function View.as_view.<locals>.vie...
+           ©¸ <Flask 'app'>
+
+> File "D:\pycharmProjects\interfaceplatform\FXTest\app\views.py", line 194, in register
+    mail.send(msg)
+    ©¦    ©¦    ©¸ <flask_mail.Message object at 0x000001AA0F889708>
+    ©¦    ©¸ <function _MailMixin.send at 0x000001AA0D85C3A8>
+    ©¸ <flask_mail.Mail object at 0x000001AA0F7A7A08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+         ©¦    ©¸ <function _MailMixin.connect at 0x000001AA0D85C4C8>
+         ©¸ <flask_mail.Mail object at 0x000001AA0F7A7A08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 510, in connect
+    raise RuntimeError("The curent application was not configured with Flask-Mail")
+
+RuntimeError: The curent application was not configured with Flask-Mail

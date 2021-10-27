@@ -162,20 +162,26 @@ def register():
             return render_template('home/register.html', form=form)
         job_num = User.query.filter_by(jobnum=jobnum).first()
         if job_num:
+            print("1")
             flash(MessageEnum.jobnum_oblg_reg_one.value[1])
             return render_template('home/register.html', form=form)
         if pasword != setpasswod:
+            print("2")
             flash(MessageEnum.password_not_same.value[1])
             return render_template('home/register.html', form=form)
         user = User.query.filter_by(username=usernmae).first()
         if user:
+            print("3")
             flash(MessageEnum.user_exict.value[1])
             return render_template('home/register.html', form=form)
         emai = User.query.filter_by(user_email=email).first()
         if emai:
+            print("4")
             flash(MessageEnum.email_exict.value[1])
             return render_template('home/register.html', form=form)
+        print("123")
         new_user = User(username=usernmae, user_email=email, jobnum=job_num)
+        print(usernmae, email, job_num, "hahah")
         new_user.set_password(pasword)
         db.session.add(new_user)
         try:

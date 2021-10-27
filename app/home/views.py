@@ -36,7 +36,7 @@ def load_user(user_id):
 
 
 class IndexView(MethodView):
-    @login_required
+    # @login_required
     def get(self):
         interface_cont = Interface.query.filter_by(status=False).all()
         interface_result = TestcaseResult.query.all()
@@ -122,6 +122,7 @@ class LoginView(MethodView):
                 return reponse(message=MessageEnum.login_user_free_message.value[1],
                                code=MessageEnum.login_user_free_message.value[0], data='')
             if user.check_password(password):
+                print("pass")
                 if (user.is_free == True and user.freetime != None and user.err_num > 6 and (
                         datetime.datetime.now() - user.freetime).min > 10):
                     return reponse(
@@ -138,6 +139,7 @@ class LoginView(MethodView):
                                code=MessageEnum.login_user_sucess_message.value[0],
                                data='')
             else:
+                print(1)
                 if (user.err_num != None and user.err_num >= 5):
                     if (user.freetime != 'None'):
                         if (datetime.datetime.now() - user.freetime).min > 10:

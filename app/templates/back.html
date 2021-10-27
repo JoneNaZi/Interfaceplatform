@@ -16,9 +16,10 @@
 <body style="background-color:ghostwhite">
 <header class="am-topbar am-topbar-inverse admin-header">
     <div class="am-topbar-brand" style="height: 65px;">
-        <a href="javascript:;" class="tpl-logo">
-            <img src="{{ url_for('static',filename='img/logo.png') }}" height="80px" alt="">
-        </a>
+{#        <a href="javascript:;" class="tpl-logo">#}
+{#            <img src="{{ url_for('static',filename='img/logo.png') }}" height="80px" alt="">#}
+{#        </a>#}
+        <h1>接口自动化平台</h1>
     </div>
     <div class="am-collapse am-topbar-collapse" id="topbar-collapse">
         <ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list tpl-header-list">
@@ -143,17 +144,7 @@
     {% block hello %}
     {% endblock %}
 </div>
-{% block fen %}
-{% endblock %}
-<div style='text-align: center;margin-bottom: auto;
-    min-height: 15px;
-    height: 30px;
-    margin-top: 10px;
-    padding-top: 30px;'>
-    <h3 style="color: red"><strong>版权雷子所有，联系qq&微信：952943386 qq交流群：194704520,如果定制开发或者疑问可联系我</strong></h3>
-</div>
-{% block js %}
-{% endblock %}
+
 <script type='text/javascript'>
     $(document).ready(function () {
         $('.tpl-left-nav-menu li a').each(function () {

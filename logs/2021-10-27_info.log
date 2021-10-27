@@ -1,0 +1,260 @@
+2021-10-27 10:09:17.427 | ERROR    | app.views:register:197 - The curent application was not configured with Flask-Mail
+Traceback (most recent call last):
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 508, in connect
+    return Connection(app.extensions['mail'])
+           ©¦          ©¸ <Flask 'app'>
+           ©¸ <class 'flask_mail.Connection'>
+
+KeyError: 'mail'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    ©¦    ©¸ <function Thread._bootstrap_inner at 0x00000237EF34B318>
+    ©¸ <Thread(Thread-48, started daemon 2439337002472)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 926, in _bootstrap_inner
+    self.run()
+    ©¦    ©¸ <function Thread.run at 0x00000237EF34B0D8>
+    ©¸ <Thread(Thread-48, started daemon 2439337002472)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    ©¦    ©¦        ©¦    ©¦        ©¦    ©¸ {}
+    ©¦    ©¦        ©¦    ©¦        ©¸ <Thread(Thread-48, started daemon 2439337002472)>
+    ©¦    ©¦        ©¦    ©¸ (<gevent._socket3.socket at 0x237f4009dd8 object, fd=1464, family=2, type=1, proto=0>, ('127.0.0.1', 65034))
+    ©¦    ©¦        ©¸ <Thread(Thread-48, started daemon 2439337002472)>
+    ©¦    ©¸ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x00000237F3E115C8>>
+    ©¸ <Thread(Thread-48, started daemon 2439337002472)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    ©¦    ©¦              ©¦        ©¸ ('127.0.0.1', 65034)
+    ©¦    ©¦              ©¸ <gevent._socket3.socket at 0x237f4009dd8 object, fd=1464, family=2, type=1, proto=0>
+    ©¦    ©¸ <function BaseServer.finish_request at 0x00000237EF93B708>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000237F3E115C8>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ©¦    ©¦                   ©¦        ©¦               ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000237F3E115C8>
+    ©¦    ©¦                   ©¦        ©¸ ('127.0.0.1', 65034)
+    ©¦    ©¦                   ©¸ <gevent._socket3.socket at 0x237f4009dd8 object, fd=1464, family=2, type=1, proto=0>
+    ©¦    ©¸ <class 'werkzeug.serving.WSGIRequestHandler'>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000237F3E115C8>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 720, in __init__
+    self.handle()
+    ©¦    ©¸ <function WSGIRequestHandler.handle at 0x00000237EFA72798>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000237F3F56B08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 329, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+         ©¦                      ©¦      ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000237F3F56B08>
+         ©¦                      ©¸ <function BaseHTTPRequestHandler.handle at 0x00000237EFA6F558>
+         ©¸ <class 'http.server.BaseHTTPRequestHandler'>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\http\server.py", line 426, in handle
+    self.handle_one_request()
+    ©¦    ©¸ <function WSGIRequestHandler.handle_one_request at 0x00000237EFA72948>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000237F3F56B08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 364, in handle_one_request
+    return self.run_wsgi()
+           ©¦    ©¸ <function WSGIRequestHandler.run_wsgi at 0x00000237EFA72708>
+           ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000237F3F56B08>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+    ©¦       ©¦    ©¦      ©¸ <werkzeug.debug.DebuggedApplication object at 0x00000237F3C17888>
+    ©¦       ©¦    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x00000237F3E115C8>
+    ©¦       ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x00000237F3F56B08>
+    ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x00000237F3FFCDC8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 296, in execute
+    for data in application_iter:
+                ©¸ <generator object DebuggedApplication.debug_application at 0x00000237F3E16748>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ©¦    ©¦   ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000237F3FFC678>
+               ©¦    ©¦   ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1464>, 'wsgi.errors': <_io.TextIOW...
+               ©¦    ©¸ <Flask 'app'>
+               ©¸ <werkzeug.debug.DebuggedApplication object at 0x00000237F3C17888>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           ©¦    ©¦        ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x00000237F3FFC678>
+           ©¦    ©¦        ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1464>, 'wsgi.errors': <_io.TextIOW...
+           ©¦    ©¸ <function Flask.wsgi_app at 0x00000237F0232708>
+           ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               ©¦    ©¸ <function Flask.full_dispatch_request at 0x00000237F022DDC8>
+               ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         ©¦    ©¸ <function Flask.dispatch_request at 0x00000237F022DD38>
+         ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           ©¦    ©¦              ©¦    ©¦           ©¦   ©¸ {}
+           ©¦    ©¦              ©¦    ©¦           ©¸ <Request 'http://127.0.0.1:5002/register' [POST]>
+           ©¦    ©¦              ©¦    ©¸ 'register'
+           ©¦    ©¦              ©¸ <Rule '/register' (GET, HEAD, POST, OPTIONS) -> register>
+           ©¦    ©¸ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'app'>>, 'specs': <function View.as_view.<locals>.vie...
+           ©¸ <Flask 'app'>
+
+> File "D:\pycharmProjects\interfaceplatform\FXTest\app\views.py", line 194, in register
+    mail.send(msg)
+    ©¦    ©¦    ©¸ <flask_mail.Message object at 0x00000237F3F56888>
+    ©¦    ©¸ <function _MailMixin.send at 0x00000237F1FDA438>
+    ©¸ <flask_mail.Mail object at 0x00000237F3F66A48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+         ©¦    ©¸ <function _MailMixin.connect at 0x00000237F1FDA558>
+         ©¸ <flask_mail.Mail object at 0x00000237F3F66A48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 510, in connect
+    raise RuntimeError("The curent application was not configured with Flask-Mail")
+
+RuntimeError: The curent application was not configured with Flask-Mail
+2021-10-27 10:32:07.692 | ERROR    | app.views:register:197 - The curent application was not configured with Flask-Mail
+Traceback (most recent call last):
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 508, in connect
+    return Connection(app.extensions['mail'])
+           ©¦          ©¸ <Flask 'app'>
+           ©¸ <class 'flask_mail.Connection'>
+
+KeyError: 'mail'
+
+
+During handling of the above exception, another exception occurred:
+
+
+Traceback (most recent call last):
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    ©¦    ©¸ <function Thread._bootstrap_inner at 0x00000251457AB318>
+    ©¸ <Thread(Thread-4, started daemon 2548158553256)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 926, in _bootstrap_inner
+    self.run()
+    ©¦    ©¸ <function Thread.run at 0x00000251457AB0D8>
+    ©¸ <Thread(Thread-4, started daemon 2548158553256)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    ©¦    ©¦        ©¦    ©¦        ©¦    ©¸ {}
+    ©¦    ©¦        ©¦    ©¦        ©¸ <Thread(Thread-4, started daemon 2548158553256)>
+    ©¦    ©¦        ©¦    ©¸ (<gevent._socket3.socket at 0x2514a51ff28 object, fd=1348, family=2, type=1, proto=0>, ('127.0.0.1', 65395))
+    ©¦    ©¦        ©¸ <Thread(Thread-4, started daemon 2548158553256)>
+    ©¦    ©¸ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000002514A250988>>
+    ©¸ <Thread(Thread-4, started daemon 2548158553256)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    ©¦    ©¦              ©¦        ©¸ ('127.0.0.1', 65395)
+    ©¦    ©¦              ©¸ <gevent._socket3.socket at 0x2514a51ff28 object, fd=1348, family=2, type=1, proto=0>
+    ©¦    ©¸ <function BaseServer.finish_request at 0x0000025145D8C708>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002514A250988>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ©¦    ©¦                   ©¦        ©¦               ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002514A250988>
+    ©¦    ©¦                   ©¦        ©¸ ('127.0.0.1', 65395)
+    ©¦    ©¦                   ©¸ <gevent._socket3.socket at 0x2514a51ff28 object, fd=1348, family=2, type=1, proto=0>
+    ©¦    ©¸ <class 'werkzeug.serving.WSGIRequestHandler'>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002514A250988>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 720, in __init__
+    self.handle()
+    ©¦    ©¸ <function WSGIRequestHandler.handle at 0x0000025145EC2798>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000002514A517788>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 329, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+         ©¦                      ©¦      ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000002514A517788>
+         ©¦                      ©¸ <function BaseHTTPRequestHandler.handle at 0x0000025145EBF558>
+         ©¸ <class 'http.server.BaseHTTPRequestHandler'>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\http\server.py", line 426, in handle
+    self.handle_one_request()
+    ©¦    ©¸ <function WSGIRequestHandler.handle_one_request at 0x0000025145EC2948>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000002514A517788>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 364, in handle_one_request
+    return self.run_wsgi()
+           ©¦    ©¸ <function WSGIRequestHandler.run_wsgi at 0x0000025145EC2708>
+           ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000002514A517788>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+    ©¦       ©¦    ©¦      ©¸ <werkzeug.debug.DebuggedApplication object at 0x000002514A078F48>
+    ©¦       ©¦    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002514A250988>
+    ©¦       ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x000002514A517788>
+    ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x000002514A5079D8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 296, in execute
+    for data in application_iter:
+                ©¸ <generator object DebuggedApplication.debug_application at 0x000002514A2576C8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ©¦    ©¦   ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002514A507A68>
+               ©¦    ©¦   ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1348>, 'wsgi.errors': <_io.TextIOW...
+               ©¦    ©¸ <Flask 'app'>
+               ©¸ <werkzeug.debug.DebuggedApplication object at 0x000002514A078F48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           ©¦    ©¦        ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x000002514A507A68>
+           ©¦    ©¦        ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=1348>, 'wsgi.errors': <_io.TextIOW...
+           ©¦    ©¸ <function Flask.wsgi_app at 0x0000025146682708>
+           ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               ©¦    ©¸ <function Flask.full_dispatch_request at 0x000002514667DDC8>
+               ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         ©¦    ©¸ <function Flask.dispatch_request at 0x000002514667DD38>
+         ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           ©¦    ©¦              ©¦    ©¦           ©¦   ©¸ {}
+           ©¦    ©¦              ©¦    ©¦           ©¸ <Request 'http://127.0.0.1:5002/register' [POST]>
+           ©¦    ©¦              ©¦    ©¸ 'register'
+           ©¦    ©¦              ©¸ <Rule '/register' (HEAD, OPTIONS, GET, POST) -> register>
+           ©¦    ©¸ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'app'>>, 'specs': <function View.as_view.<locals>.vie...
+           ©¸ <Flask 'app'>
+
+> File "D:\pycharmProjects\interfaceplatform\FXTest\app\views.py", line 194, in register
+    mail.send(msg)
+    ©¦    ©¦    ©¸ <flask_mail.Message object at 0x000002514A518F88>
+    ©¦    ©¸ <function _MailMixin.send at 0x000002514842A438>
+    ©¸ <flask_mail.Mail object at 0x000002514A557FC8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 491, in send
+    with self.connect() as connection:
+         ©¦    ©¸ <function _MailMixin.connect at 0x000002514842A558>
+         ©¸ <flask_mail.Mail object at 0x000002514A557FC8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask_mail.py", line 510, in connect
+    raise RuntimeError("The curent application was not configured with Flask-Mail")
+
+RuntimeError: The curent application was not configured with Flask-Mail

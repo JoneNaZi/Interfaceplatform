@@ -3,7 +3,7 @@
   @auther         leizi
   @create          2020-05-08 15:26
 '''
-import paramiko
+#import paramiko
 
 
 class Sshtool(object):

@@ -8,21 +8,26 @@
     <link href="{{ url_for('static',filename='css/main.css') }}" rel="stylesheet">
     <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static',filename='js/jquery.min.js') }}"></script>
-    <style type="text/css">
-        body {
-            background: url({{url_for('static',filename='img/bg-login.jpg')}}) !important;
-        }
-    </style>
 </head>
-<body style="    background-color: beige;">
+<body>
+<div class="homeBox">
+    <ul class="tyg-div">
+        <li>让</li>
+        <li><div style="margin-left:20px;">测</div></li>
+        <li><div style="margin-left:40px;">试</div></li>
+        <li><div style="margin-left:60px;">变</div></li>
+        <li><div style="margin-left:80px;">得</div></li>
+        <li><div style="margin-left:100px;">轻</div></li>
+        <li><div style="margin-left:120px;">松</div></li>
+    </ul>
+
 <div id="wrapper">
     <div class="vertical-align-wrap">
         <div class="vertical-align-middle">
-            <div class="header " style="">
+            <div class="header">
                 <h1 style="text-align: center;">FXTest测试平台登录</h1>
             </div>
-            <div style="text-align: center;color: red" id="duanyan">
-            </div>
+
             <div style="text-align: center;color: red">
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
@@ -47,18 +52,19 @@
                         <div class="form-group">
                             {{ form.password(class='form-control',id='password') }}
                         </div>
+                        <div style="text-align: left;color: red" id="duanyan"></div>
                         <button type="button" class="btn btn-primary btn-lg btn-block" onclick="login()">登录</button>
                     </div>
                 </form>
             </div>
-            <h3 style="text-align: center;color: red">管理员：liwanlei 密码:liwanlei </h3>
-            <h3 style="text-align: center;color: red">版权归属雷子所有，如果您要进行定制开发 可以联系我：952943386 </h3>
             <h4 style="text-align: center;color: red ">
                 <strong><a href="{{ url_for('register') }}">注册</a></strong>
             </h4>
         </div>
     </div>
 </div>
+</div>
+
 <script type="text/javascript">
     function login() {
         var username = document.getElementById('username').value;
