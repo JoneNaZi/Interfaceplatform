@@ -1,0 +1,132 @@
+2021-11-13 15:09:59.730 | ERROR    | common.mockservermeth:get_token_data:51 - 'HTTP_TOKEN'
+Traceback (most recent call last):
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 890, in _bootstrap
+    self._bootstrap_inner()
+    ©¦    ©¸ <function Thread._bootstrap_inner at 0x000002144C9AB318>
+    ©¸ <Thread(Thread-310, started daemon 2286288263208)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 926, in _bootstrap_inner
+    self.run()
+    ©¦    ©¸ <function Thread.run at 0x000002144C9AB0D8>
+    ©¸ <Thread(Thread-310, started daemon 2286288263208)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\threading.py", line 870, in run
+    self._target(*self._args, **self._kwargs)
+    ©¦    ©¦        ©¦    ©¦        ©¦    ©¸ {}
+    ©¦    ©¦        ©¦    ©¦        ©¸ <Thread(Thread-310, started daemon 2286288263208)>
+    ©¦    ©¦        ©¦    ©¸ (<gevent._socket3.socket at 0x21451ae7c88 object, fd=2024, family=2, type=1, proto=0>, ('127.0.0.1', 56603))
+    ©¦    ©¦        ©¸ <Thread(Thread-310, started daemon 2286288263208)>
+    ©¦    ©¸ <bound method ThreadingMixIn.process_request_thread of <werkzeug.serving.ThreadedWSGIServer object at 0x000002145142E988>>
+    ©¸ <Thread(Thread-310, started daemon 2286288263208)>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 650, in process_request_thread
+    self.finish_request(request, client_address)
+    ©¦    ©¦              ©¦        ©¸ ('127.0.0.1', 56603)
+    ©¦    ©¦              ©¸ <gevent._socket3.socket at 0x21451ae7c88 object, fd=2024, family=2, type=1, proto=0>
+    ©¦    ©¸ <function BaseServer.finish_request at 0x000002144CF7C708>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002145142E988>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 360, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+    ©¦    ©¦                   ©¦        ©¦               ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002145142E988>
+    ©¦    ©¦                   ©¦        ©¸ ('127.0.0.1', 56603)
+    ©¦    ©¦                   ©¸ <gevent._socket3.socket at 0x21451ae7c88 object, fd=2024, family=2, type=1, proto=0>
+    ©¦    ©¸ <class 'werkzeug.serving.WSGIRequestHandler'>
+    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002145142E988>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\socketserver.py", line 720, in __init__
+    self.handle()
+    ©¦    ©¸ <function WSGIRequestHandler.handle at 0x000002144D0B2798>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x0000021451AEA6C8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 329, in handle
+    rv = BaseHTTPRequestHandler.handle(self)
+         ©¦                      ©¦      ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x0000021451AEA6C8>
+         ©¦                      ©¸ <function BaseHTTPRequestHandler.handle at 0x000002144D0AF558>
+         ©¸ <class 'http.server.BaseHTTPRequestHandler'>
+
+  File "C:\Users\gumin\AppData\Local\Programs\Python\Python37\lib\http\server.py", line 426, in handle
+    self.handle_one_request()
+    ©¦    ©¸ <function WSGIRequestHandler.handle_one_request at 0x000002144D0B2948>
+    ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x0000021451AEA6C8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 364, in handle_one_request
+    return self.run_wsgi()
+           ©¦    ©¸ <function WSGIRequestHandler.run_wsgi at 0x000002144D0B2708>
+           ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x0000021451AEA6C8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+    ©¦       ©¦    ©¦      ©¸ <werkzeug.debug.DebuggedApplication object at 0x000002144FBFBEC8>
+    ©¦       ©¦    ©¸ <werkzeug.serving.ThreadedWSGIServer object at 0x000002145142E988>
+    ©¦       ©¸ <werkzeug.serving.WSGIRequestHandler object at 0x0000021451AEA6C8>
+    ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.execute at 0x0000021451AE83A8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\serving.py", line 296, in execute
+    for data in application_iter:
+                ©¸ <generator object DebuggedApplication.debug_application at 0x0000021451761B48>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\debug\__init__.py", line 330, in debug_application
+    app_iter = self.app(environ, start_response)
+               ©¦    ©¦   ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000021451AE8438>
+               ©¦    ©¦   ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=2024>, 'wsgi.errors': <_io.TextIOW...
+               ©¦    ©¸ <Flask 'app'>
+               ©¸ <werkzeug.debug.DebuggedApplication object at 0x000002144FBFBEC8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2464, in __call__
+    return self.wsgi_app(environ, start_response)
+           ©¦    ©¦        ©¦        ©¸ <function WSGIRequestHandler.run_wsgi.<locals>.start_response at 0x0000021451AE8438>
+           ©¦    ©¦        ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=2024>, 'wsgi.errors': <_io.TextIOW...
+           ©¦    ©¸ <function Flask.wsgi_app at 0x000002144D872708>
+           ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+               ©¦    ©¸ <function Flask.full_dispatch_request at 0x000002144D86DDC8>
+               ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+         ©¦    ©¸ <function Flask.dispatch_request at 0x000002144D86DD38>
+         ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+           ©¦    ©¦              ©¦    ©¦           ©¦   ©¸ {'path': 'login'}
+           ©¦    ©¦              ©¦    ©¦           ©¸ <Request 'http://127.0.0.1:5002/mackserver/login' [GET]>
+           ©¦    ©¦              ©¦    ©¸ 'mock.mackserver'
+           ©¦    ©¦              ©¸ <Rule '/mackserver/<path>' (PUT, OPTIONS, DELETE, HEAD, GET, POST) -> mock.mackserver>
+           ©¦    ©¸ {'static': <bound method _PackageBoundObject.send_static_file of <Flask 'app'>>, 'specs': <function View.as_view.<locals>.vie...
+           ©¸ <Flask 'app'>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+           ©¦    ©¦                 ©¦       ©¸ {'path': 'login'}
+           ©¦    ©¦                 ©¸ ()
+           ©¦    ©¸ <function MethodView.dispatch_request at 0x000002144F43C1F8>
+           ©¸ <app.mock.views.MakeMockserverView object at 0x0000021451AEAEC8>
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\flask\views.py", line 163, in dispatch_request
+    return meth(*args, **kwargs)
+           ©¦     ©¦       ©¸ {'path': 'login'}
+           ©¦     ©¸ ()
+           ©¸ <bound method MakeMockserverView.get of <app.mock.views.MakeMockserverView object at 0x0000021451AEAEC8>>
+
+  File "D:\pycharmProjects\interfaceplatform\FXTest\app\mock\views.py", line 87, in get
+    data = get_token_data(path)
+           ©¦              ©¸ 'login'
+           ©¸ <function get_token_data at 0x000002144FCAB678>
+
+> File "D:\pycharmProjects\interfaceplatform\FXTest\common\mockservermeth.py", line 30, in get_token_data
+    token = heders['token']
+            ©¸ EnvironHeaders([('Host', '127.0.0.1:5002'), ('Connection', 'keep-alive'), ('Sec-Ch-Ua', '"Microsoft Edge";v="95", "Chromium";...
+
+  File "D:\pycharmProjects_tools\FXTest\lib\site-packages\werkzeug\datastructures.py", line 1375, in __getitem__
+    return _unicodify_header_value(self.environ["HTTP_" + key])
+           ©¦                       ©¦    ©¦                 ©¸ 'TOKEN'
+           ©¦                       ©¦    ©¸ {'wsgi.version': (1, 0), 'wsgi.url_scheme': 'http', 'wsgi.input': <_io.BufferedReader name=2024>, 'wsgi.errors': <_io.TextIOW...
+           ©¦                       ©¸ EnvironHeaders([('Host', '127.0.0.1:5002'), ('Connection', 'keep-alive'), ('Sec-Ch-Ua', '"Microsoft Edge";v="95", "Chromium";...
+           ©¸ <function _unicodify_header_value at 0x000002144D516A68>
+
+KeyError: 'HTTP_TOKEN'

@@ -1,3 +1,98 @@
+{% block js %}
+    <script type="text/javascript">
+        function addmodel() {
+            m = document.getElementById('model');
+            m.style.display = ''
+        }
+
+        function guanbi() {
+            m = document.getElementById('model');
+            m.style.display = 'none'
+        }
+
+        function tianjian() {
+            var project = document.getElementById('name').value;
+            var ob = document.getElementById('projetc');
+            var index = ob.selectedIndex;
+            var projec = ob.options[index].value;
+            var data = {};
+            data['name'] = project;
+            data['project'] = projec;
+            $.ajax({
+                    url: '{{url_for( 'home.model') }}',
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=UTF-8',
+                    processData: false,
+                    success: function (result) {
+                        if (result['code'] == 200) {
+                            alert(result['message']);
+                            location.reload()
+                        } else {
+                            alert(result['message']);
+                        }
+                    }
+                }
+            )
+        }
+
+        function deletemodel(id) {
+            $.ajax({
+                url: '{{url_for( 'home.model') }}',
+                type: 'DELETE',
+                data: id,
+                contentType: 'application/json; charset=UTF-8',
+                processData: false,
+                success: function (data) {
+                    if (data['code'] != 200) {
+                        alert(data['message'])
+                    } else {
+                        alert(data['message']);
+                        caseid = document.getElementById(id);
+                        caseid.hidden = true;
+                    }
+                }
+            })
+        }
+
+        function editproject(id) {
+            m = document.getElementById('project-' + id);
+            m.style.display = ''
+        }
+
+        function guanbiedit(id) {
+            m = document.getElementById('project-' + id);
+            m.style.display = 'none'
+        }
+
+        function eitproject(id) {
+            var project = document.getElementById('name-' + id).value;
+            var ob = document.getElementById('projetc-' + id);
+            var index = ob.selectedIndex;
+            var projec = ob.options[index].value;
+            var data = {};
+            data['name'] = project;
+            data['project'] = projec;
+            data['id'] = id;
+            $.ajax({
+                    url: '{{url_for( 'home.model') }}',
+                    type: 'PUT',
+                    data: JSON.stringify(data),
+                    contentType: 'application/json; charset=UTF-8',
+                    processData: false,
+                    success: function (result) {
+                        if (result['code'] == 200) {
+                            alert(result['message']);
+                            location.reload()
+                        } else {
+                            alert(result['message']);
+                        }
+                    }
+                }
+            )
+        }
+    </script>
+{% endblock %}
 {% extends "back.html" %}
 {% block hello %}
     {% import "fenye.html" as macros %}
@@ -127,7 +222,7 @@
         <div style="height: 5px;">添加模块</div>
         <div style="background-color: whitesmoke;margin-top: 24px">
             <span style="text-align: center">
-                模块：<input type="text" id="name" placeholder="请写入你要添加的模块的名称">
+                模块：<input style="width: 746px" type="text" id="name" placeholder="请写入你要添加的模块的名称">
             </span>
             <p>
                 <span>
@@ -146,99 +241,4 @@
             <input value="取消" type="button" class=" btn-default" onclick="guanbi()">
         </div>
     </div>
-{% endblock %}
-{% block js %}
-    <script type="text/javascript">
-        function addmodel() {
-            m = document.getElementById('model');
-            m.style.display = ''
-        }
-
-        function guanbi() {
-            m = document.getElementById('model');
-            m.style.display = 'none'
-        }
-
-        function tianjian() {
-            var project = document.getElementById('name').value;
-            var ob = document.getElementById('projetc');
-            var index = ob.selectedIndex;
-            var projec = ob.options[index].value;
-            var data = {};
-            data['name'] = project;
-            data['project'] = projec;
-            $.ajax({
-                    url: '{{url_for( 'home.model') }}',
-                    type: 'POST',
-                    data: JSON.stringify(data),
-                    contentType: 'application/json; charset=UTF-8',
-                    processData: false,
-                    success: function (result) {
-                        if (result['code'] == 200) {
-                            alert(result['message']);
-                            location.reload()
-                        } else {
-                            alert(result['message']);
-                        }
-                    }
-                }
-            )
-        }
-
-        function deletemodel(id) {
-            $.ajax({
-                url: '{{url_for( 'home.model') }}',
-                type: 'DELETE',
-                data: id,
-                contentType: 'application/json; charset=UTF-8',
-                processData: false,
-                success: function (data) {
-                    if (data['code'] != 200) {
-                        alert(data['message'])
-                    } else {
-                        alert(data['message']);
-                        caseid = document.getElementById(id);
-                        caseid.hidden = true;
-                    }
-                }
-            })
-        }
-
-        function editproject(id) {
-            m = document.getElementById('project-' + id);
-            m.style.display = ''
-        }
-
-        function guanbiedit(id) {
-            m = document.getElementById('project-' + id);
-            m.style.display = 'none'
-        }
-
-        function eitproject(id) {
-            var project = document.getElementById('name-' + id).value;
-            var ob = document.getElementById('projetc-' + id);
-            var index = ob.selectedIndex;
-            var projec = ob.options[index].value;
-            var data = {};
-            data['name'] = project;
-            data['project'] = projec;
-            data['id'] = id;
-            $.ajax({
-                    url: '{{url_for( 'home.model') }}',
-                    type: 'PUT',
-                    data: JSON.stringify(data),
-                    contentType: 'application/json; charset=UTF-8',
-                    processData: false,
-                    success: function (result) {
-                        if (result['code'] == 200) {
-                            alert(result['message']);
-                            location.reload()
-                        } else {
-                            alert(result['message']);
-                        }
-                    }
-                }
-            )
-        }
-    </script>
 {% endblock %}
