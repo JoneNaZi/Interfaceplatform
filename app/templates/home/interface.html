@@ -1,124 +1,3 @@
-{% extends "back.html" %}
-{% block hello %}
-    {% import "fenye.html" as macros %}
-    <div class="tpl-content-wrapper" style="margin-top: -7px;">
-        <div class="tpl-content-page-title">
-        </div>
-        <div class="tpl-portlet-components">
-            <div class="portlet-title">
-                <div class="caption font-green bold">
-                    <span class="am-icon-code"></span> 接口
-                </div>
-            </div>
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    <ul class='flashes'>
-                    {% for message in messages %}
-                        <li style="color:red">{{ message }}</li>
-                    {% endfor %}
-                {% endif %}
-            </ul>
-            {% endwith %}
-            <strong>选择项目：</strong>
-            <select id="projectinter" onclick="getprointer()">
-                {% for project in projects %}
-                    <option>{{ project.project_name }}</option>
-                {% endfor %}
-            </select>
-            <span>接口的类型：</span>
-            <select id="interfacetype" onclick="getprointer()">
-                <option>http</option>
-                <option>dubbo</option>
-            </select>
-            <div style="margin-top: 10px">
-                <a onclick="addinter()">
-                    <input type="button" name="" value="添加" class="am-btn am-btn-default am-btn-success">
-                </a>
-                <a href="{{ url_for('interface.import_inter') }}">
-                    <input type="button" name="" value="批量导入" class="am-btn am-btn-default am-btn-success">
-                </a>
-                <button class="btn-default am-btn-default am-btn" onclick="shezhiguanliyuan()">导出接口</button>
-            </div>
-            <table class="am-table am-table-hover table-main" style="width:100%;table-layout:fixed;">
-                <thead>
-                <tr id="interfacete">
-                </tr>
-                </thead>
-                <tbody id="testyonglis">
-                </tbody>
-            </table>
-            <nav aria-label="Page navigation" class="pull-right">
-                <ul class="pagination">
-                    {{ html|safe }}
-                </ul>
-            </nav>
-
-        </div>
-    </div>
-    <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
-         id="ceshiyongli">
-        <form method="POST" action="{{ url_for('interface.import_interface') }}">
-            <div style="height: 5px;">请选择导出接口项目：</div>
-            <div style="background-color: whitesmoke;margin-top: 24px">
-                选择导出的项目:
-                <select name="interface_type">
-                    {% for project in projects %}
-                        <option name="project">{{ project.project_name }}</option>
-                    {% endfor %}
-                </select>
-            </div>
-            <div style="margin-top: 50%;margin-bottom: auto">
-                <input value="导出" type="submit" class="btn-default shezhiguanliyuan">
-                <input value="取消" type="button" class=" btn-default" onclick="guanbi()">
-            </div>
-        </form>
-    </div>
-    <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
-         id="addinterface">
-        <div style="height: 5px;">添加接口</div>
-        <div style="background-color: whitesmoke;margin-top: 24px">
-            <p>
-                项目：<select id="project">
-                {% for project in projects %}
-                    <option>{{ project.project_name }}</option>
-                {% endfor %}
-            </select>
-            </p>
-            <p>
-                模块：<select id="model">
-                {% for model in models %}
-                    <option>{{ model.model_name }}</option>
-                {% endfor %}
-            </select>
-            </p>
-            <p>
-                接口名字：<input id="name" placeholder="请输入接口的名称">
-            </p>
-            <p>
-                接口url：<input id="url" placeholder="请输入接口的url">
-            </p>
-            <p>协议类型：
-                <select id="xieyi">
-                    <option>http</option>
-                    <option>dubbo</option>
-                </select>
-            </p>
-            <p>
-                接口header：<input id="headers" placeholder="请输入接口的headers"> <span style="color: #8D99A8">
-                        dubbo接口这里需要填写入参对象
-                    </span>
-            </p>
-            <p>
-                请求方法
-                <input id="meth" placeholder="请输入接口的请求方法">
-            </p>
-        </div>
-        <div style="margin-top: 1%;margin-bottom: auto">
-            <input value="添加" type="button" class="btn-default" onclick="add_interface()">
-            <input value="取消" type="button" class=" btn-default" onclick="guan()">
-        </div>
-    </div>
-{% endblock %}
 {% block js %}
     <script type="text/javascript">
         window.onload = getprointer();
@@ -258,4 +137,126 @@
             })
         }
     </script>
+{% endblock %}
+
+{% extends "back.html" %}
+{% block hello %}
+    {% import "fenye.html" as macros %}
+    <div class="tpl-content-wrapper" style="margin-top: -7px;">
+        <div class="tpl-content-page-title">
+        </div>
+        <div class="tpl-portlet-components">
+            <div class="portlet-title">
+                <div class="caption font-green bold">
+                    <span class="am-icon-code"></span> 接口
+                </div>
+            </div>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class='flashes'>
+                    {% for message in messages %}
+                        <li style="color:red">{{ message }}</li>
+                    {% endfor %}
+                {% endif %}
+            </ul>
+            {% endwith %}
+            <strong>选择项目：</strong>
+            <select id="projectinter" onclick="getprointer()">
+                {% for project in projects %}
+                    <option>{{ project.project_name }}</option>
+                {% endfor %}
+            </select>
+            <span>接口的类型：</span>
+            <select id="interfacetype" onclick="getprointer()">
+                <option>http</option>
+                <option>dubbo</option>
+            </select>
+            <div style="margin-top: 10px">
+                <a onclick="addinter()">
+                    <input type="button" name="" value="添加" class="am-btn am-btn-default am-btn-success">
+                </a>
+                <a href="{{ url_for('interface.import_inter') }}">
+                    <input type="button" name="" value="批量导入" class="am-btn am-btn-default am-btn-success">
+                </a>
+                <button class="btn-default am-btn-default am-btn" onclick="shezhiguanliyuan()">导出接口</button>
+            </div>
+            <table class="am-table am-table-hover table-main" style="width:100%;table-layout:fixed;">
+                <thead>
+                <tr id="interfacete">
+                </tr>
+                </thead>
+                <tbody id="testyonglis">
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation" class="pull-right">
+                <ul class="pagination">
+                    {{ html|safe }}
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+    <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
+         id="ceshiyongli">
+        <form method="POST" action="{{ url_for('interface.import_interface') }}">
+            <div style="height: 5px;">请选择导出接口项目：</div>
+            <div style="background-color: whitesmoke;margin-top: 24px">
+                选择导出的项目:
+                <select name="interface_type">
+                    {% for project in projects %}
+                        <option name="project">{{ project.project_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div style="margin-top: 50%;margin-bottom: auto">
+                <input value="导出" type="submit" class="btn-default shezhiguanliyuan">
+                <input value="取消" type="button" class=" btn-default" onclick="guanbi()">
+            </div>
+        </form>
+    </div>
+    <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
+         id="addinterface">
+        <div style="height: 5px;">添加接口</div>
+        <div style="background-color: whitesmoke;margin-top: 24px">
+            <p>
+                项目：<select id="project">
+                {% for project in projects %}
+                    <option>{{ project.project_name }}</option>
+                {% endfor %}
+            </select>
+            </p>
+            <p>
+                模块：<select id="model">
+                {% for model in models %}
+                    <option>{{ model.model_name }}</option>
+                {% endfor %}
+            </select>
+            </p>
+            <p>
+                接口名字：<input id="name" placeholder="请输入接口的名称">
+            </p>
+            <p>
+                接口url：<input id="url" placeholder="请输入接口的url">
+            </p>
+            <p>协议类型：
+                <select id="xieyi">
+                    <option>http</option>
+                    <option>dubbo</option>
+                </select>
+            </p>
+            <p>
+                接口header：<input id="headers" placeholder="请输入接口的headers"> <span style="color: #8D99A8">
+                        dubbo接口这里需要填写入参对象
+                    </span>
+            </p>
+            <p>
+                请求方法
+                <input id="meth" placeholder="请输入接口的请求方法">
+            </p>
+        </div>
+        <div style="margin-top: 1%;margin-bottom: auto">
+            <input value="添加" type="button" class="btn-default" onclick="add_interface()">
+            <input value="取消" type="button" class=" btn-default" onclick="guan()">
+        </div>
+    </div>
 {% endblock %}

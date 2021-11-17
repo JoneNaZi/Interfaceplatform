@@ -264,6 +264,7 @@ class Project(db.Model):  # 项目
     id = db.Column(db.Integer(), primary_key=True, autoincrement=True)
     project_user_id = db.Column(db.Integer(), db.ForeignKey('users.id'))
     project_name = db.Column(db.String(252), unique=True)
+    project_desc = db.Column(db.String(252))
     TestResult = db.relationship('TestResult', backref='projects', lazy='dynamic')
     Interfacetest = db.relationship('InterfaceTest', backref='projects', lazy='dynamic')
     Interface = db.relationship('Interface', backref='projects', lazy='dynamic')

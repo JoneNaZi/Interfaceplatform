@@ -121,16 +121,20 @@
             <caption><strong>
             </strong></caption>
             <thead>
-            <tr>
-                <th style="padding: 5px">项目名</th>
-                <th style="padding: 5px">项目描述</th>
-                <th style="padding: 5px">创建者</th>
-                <th style="padding: 5px">操作</th>
+            <tr style="padding: 5px">
+                <th>ID</th>
+                <th>项目名</th>
+                <th>项目描述</th>
+                <th>创建者</th>
+                <th>操作</th>
             </tr>
             </thead>
             <tbody>
             {% for project in projects %}
                 <tr id="{{ project.id }}">
+                    <td style="padding: 5px">
+                        {{ project.id }}
+                    </td>
                     <td style="padding: 5px">
                         {{ project.project_name }}
                     </td>
@@ -203,6 +207,5 @@
             <input value="取消" type="button" class=" btn-default" onclick="closeadd()">
         </div>
     </div>
-
         </div>
 {% endblock %}
