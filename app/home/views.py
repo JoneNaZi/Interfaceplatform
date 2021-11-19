@@ -470,7 +470,12 @@ class ProjectView(MethodView):
 
     @login_required
     def post(self):
-        name = request.data.decode('utf-8')
+        data = request.data.decode("utf-8")
+        data_dict = json.loads(data)
+        name = data_dict["name"]
+        desc = data_dict["desc"]
+        print(name, type(name))
+        print(desc, type(desc))
         if current_user.is_sper == False:
             return reponse(message=MessageEnum.user_not_permision.value[1],
                            code=MessageEnum.user_not_permision.value[0])
@@ -480,7 +485,7 @@ class ProjectView(MethodView):
         projec = Project.query.filter_by(project_name=name, status=False).first()
         if projec:
             return reponse(code=MessageEnum.project_only_one.value[0], message=MessageEnum.project_only_one.value[1])
-        new_moel = Project(project_name=name, project_user_id=current_user.id)
+        new_moel = Project(project_name=name, project_desc=desc, project_user_id=current_user.id)
         try:
             db.session.add(new_moel)
             db.session.commit()

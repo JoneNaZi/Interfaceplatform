@@ -11,11 +11,19 @@
         }
 
         function add() {
-            var project = document.getElementById('name').value;
+            let project_name = $('#name').val();
+            let project_desc = $('#desc').val();
+            {#document.getElementById('name').value;#}
+            var add_data = {
+                "name": project_name,
+                "desc": project_desc
+            };
+            {#console.log(add_data);#}
+            {#return false;#}
             $.ajax({
                     url: '{{url_for( 'home.project') }}',
                     type: 'POST',
-                    data: project,
+                    data: JSON.stringify(add_data),
                     contentType: 'application/json; charset=UTF-8',
                     processData: false,
                     success: function (result) {
@@ -141,7 +149,7 @@
                     {% if project.desc==None %}
                         <td></td>
                     {% else %}
-                        <td style="padding: 5px">{{ project.desc }}</td>
+                        <td style="padding: 5px">{{ project.project_desc }}</td>
                     {% endif %}
                     <td style="padding: 5px">
                         {{ project.users }}
@@ -168,6 +176,10 @@
                         <span style="text-align: center">
                             项目：<input type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目的名称"
                                       value="{{ project.project_name }}">
+                        </span>
+                        <span style="text-align: center">
+                            项目描述：<input type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目描述"
+                                      value="{{ project.project_desc }}">
                         </span>
 
                     </div>
@@ -200,7 +212,9 @@
             <span style="text-align: center">
                 项目：<input style="width: 746px" type="text" id="name" placeholder="请写入你要添加的项目的名称">
             </span>
-
+            <span style="text-align: center">
+                项目描述：<input style="width: 718px" type="text" id="desc" placeholder="请写入你要添加的项目描述">
+            </span>
         </div>
         <div style="margin-top: 5%;margin-bottom: auto">
             <input value="添加" type="button" class="btn-default" onclick="add()">
