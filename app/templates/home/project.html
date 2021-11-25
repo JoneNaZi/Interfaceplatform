@@ -129,12 +129,12 @@
             <caption><strong>
             </strong></caption>
             <thead>
-            <tr style="padding: 5px">
-                <th>ID</th>
-                <th>项目名</th>
-                <th>项目描述</th>
-                <th>创建者</th>
-                <th>操作</th>
+            <tr>
+                <th style="padding: 5px">ID</th>
+                <th style="padding: 5px">项目名</th>
+                <th style="padding: 5px">项目描述</th>
+                <th style="padding: 5px">创建者</th>
+                <th style="padding: 5px">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -169,22 +169,29 @@
                         {% endif %}
                     </td>
                 </tr>
-                <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
+                <div style="display:none;position:fixed;z-index: 210;width: 800px;padding:0 15px 0 0;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
                      id="project-{{ project.id }}">
-                    <div style="height: 5px;">编辑项目</div>
-                    <div style="background-color: whitesmoke;margin-top: 24px">
-                        <span style="text-align: center">
-                            项目：<input type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目的名称"
-                                      value="{{ project.project_name }}">
-                        </span>
-                        <span style="text-align: center">
-                            项目描述：<input type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目描述"
-                                      value="{{ project.project_desc }}">
-                        </span>
-
+                    <div style="margin-bottom: 30px;text-align: center;font-size: 23px">编辑项目</div>
+                    <div style="margin-bottom: 22px">
+                        <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目：</label>
+                        <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
+                            <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
+                                <input style="width: 100%" type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目的名称"
+                                          value="{{ project.project_name }}">
+                            </div>
+                        </div>
                     </div>
-                    <div style="margin-top: 50%;margin-bottom: auto">
-                        <input value="编辑" type="button" class="btn-default" onclick="eitproject({{ project.id }})">
+                    <div style="margin-bottom: 22px">
+                        <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目：</label>
+                        <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
+                            <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
+                                <input style="width: 100%" type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目描述"
+                                          value="{{ project.project_desc }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 50px;margin-bottom: auto">
+                        <input value="确认" type="button" class="btn-default" onclick="eitproject({{ project.id }})">
                         <input value="取消" type="button" class=" btn-default" onclick="guanbiedit({{ project.id }})">
                     </div>
                 </div>
@@ -222,4 +229,5 @@
         </div>
     </div>
         </div>
+    </div>
 {% endblock %}
