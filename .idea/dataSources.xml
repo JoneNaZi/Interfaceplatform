@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="data" uuid="6738da34-2f9e-469c-b80b-a4ce6e93c6f7">
+    <data-source source="LOCAL" name="data" uuid="9c283a0a-9a7c-4790-9cd0-e2229c2cdb4e">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\pycharmProjects\interfaceplatform\Interfaceplatform\data.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:D:\PycharmProjects\interfaceplatfom\Interfaceplatform\data.sqlite</jdbc-url>
       <libraries>
         <library>
           <url>file://$APPLICATION_CONFIG_DIR$/jdbc-drivers/Xerial SQLiteJDBC/3.31.1/license.txt</url>

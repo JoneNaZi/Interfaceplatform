@@ -2,7 +2,8 @@
   @Description      
   @auther         leizi
 '''
-import os
+import os, sys
+print(sys.path)
 import time
 from loguru import logger
 

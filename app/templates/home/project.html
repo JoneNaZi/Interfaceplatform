@@ -182,7 +182,7 @@
                         </div>
                     </div>
                     <div style="margin-bottom: 22px">
-                        <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目：</label>
+                        <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目描述：</label>
                         <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
                             <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
                                 <input style="width: 100%" type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目描述"
@@ -212,19 +212,27 @@
             </ul>
         </div>
     </div>
-    <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
+    <div style="display:none;position:fixed;z-index: 210;width: 800px;top: 100px;padding:0 15px 0 0;left: 20%;box-shadow: 0 0 10px rgba(0,0,0,0.6);border: solid 1px #255c71;border-radius: 5px 5px 0 0;background-color: #9eacb4"
          id="project">
-        <div style="height: 5px;">添加项目</div>
-        <div style="background-color: whitesmoke;margin-top: 24px">
-            <span style="text-align: center">
-                项目：<input style="width: 746px" type="text" id="name" placeholder="请写入你要添加的项目的名称">
-            </span>
-            <span style="text-align: center">
-                项目描述：<input style="width: 718px" type="text" id="desc" placeholder="请写入你要添加的项目描述">
-            </span>
+        <div style="margin-bottom: 30px;text-align: center;font-size: 23px">添加项目</div>
+        <div style="margin-bottom: 22px">
+            <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目：</label>
+            <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
+                <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
+                    <input style="width: 100%" type="text" id="name" placeholder="请写入你要添加的项目的名称">
+                </div>
+            </div>
+        </div>
+        <div style="margin-bottom: 22px">
+            <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目描述：</label>
+            <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
+                <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
+                    <input style="width: 100%" type="text" id="desc" placeholder="请写入你要添加的项目描述">
+                </div>
+            </div>
         </div>
         <div style="margin-top: 5%;margin-bottom: auto">
-            <input value="添加" type="button" class="btn-default" onclick="add()">
+            <input value="确认" type="button" class="btn-default" onclick="add()">
             <input value="取消" type="button" class=" btn-default" onclick="closeadd()">
         </div>
     </div>

@@ -7,6 +7,8 @@
 '''主运行文件，
 使用gevent异步请求，'''
 from app import app
+import sys
+print(sys.path)
 from flask import Blueprint
 from flask_restplus import Api
 from app import sched
