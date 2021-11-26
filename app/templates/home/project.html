@@ -175,7 +175,7 @@
                     <div style="margin-bottom: 22px">
                         <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目：</label>
                         <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
-                            <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
+                            <div style="position: relative;font-size: 14px;width: 100%">
                                 <input style="width: 100%" type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目的名称"
                                           value="{{ project.project_name }}">
                             </div>
@@ -183,14 +183,14 @@
                     </div>
                     <div style="margin-bottom: 22px">
                         <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目描述：</label>
-                        <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
-                            <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
+                        <div style="margin-left: 120px;line-height: 42px;position: relative;font-size: 14px">
+                            <div style="position: relative;font-size: 14px;width: 100%">
                                 <input style="width: 100%" type="text" id="name-{{ project.id }}" placeholder="请写入你要编辑项目描述"
                                           value="{{ project.project_desc }}">
                             </div>
                         </div>
                     </div>
-                    <div style="margin-top: 50px;margin-bottom: auto">
+                    <div style="margin-top: 5px;margin-bottom: auto">
                         <input value="确认" type="button" class="btn-default" onclick="eitproject({{ project.id }})">
                         <input value="取消" type="button" class=" btn-default" onclick="guanbiedit({{ project.id }})">
                     </div>
@@ -225,7 +225,7 @@
         </div>
         <div style="margin-bottom: 22px">
             <label style="width: 120px;text-align: right;vertical-align: middle;float: left;font-size: 14px;color: #606266;line-height: 40px;padding: 0 12px 0 0;box-sizing: border-box">项目描述：</label>
-            <div style="margin-left: 120px;line-height: 40px;position: relative;font-size: 14px">
+            <div style="margin-left: 120px;line-height: 42px;position: relative;font-size: 14px">
                 <div style="position: relative;font-size: 14px;display: inline-block;width: 100%">
                     <input style="width: 100%" type="text" id="desc" placeholder="请写入你要添加的项目描述">
                 </div>

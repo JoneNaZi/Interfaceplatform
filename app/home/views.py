@@ -474,8 +474,7 @@ class ProjectView(MethodView):
         data_dict = json.loads(data)
         name = data_dict["name"]
         desc = data_dict["desc"]
-        print(name, type(name))
-        print(desc, type(desc))
+
         if current_user.is_sper == False:
             return reponse(message=MessageEnum.user_not_permision.value[1],
                            code=MessageEnum.user_not_permision.value[0])
@@ -550,10 +549,10 @@ class ModelView(MethodView):
             for projec in current_user.quanxians:
                 project_list.append(projec.projects)
         models = Model.query.filter_by(status=False).all()
-        projects_lsit = fenye_list(Ob_list=models, split=PageShow)
-        pages = range(1, len(projects_lsit) + 1)
-        pyth_post1 = projects_lsit[int(page) - 1]
-        return render_template('home/model.html', projects=pyth_post1, pages=pages,
+        model_object_list_two = fenye_list(Ob_list=models, split=PageShow)
+        pages = range(1, len(model_object_list_two) + 1)
+        model_object_list = model_object_list_two[int(page) - 1]
+        return render_template('home/model.html', model_object_list=model_object_list, pages=pages,
                                project_list=project_list)
 
     @login_required

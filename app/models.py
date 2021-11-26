@@ -287,8 +287,8 @@ class Model(db.Model):  # 模块，有的接口是根据模块来划分的
     status = db.Column(db.Boolean(), default=False)
     project = db.Column(db.Integer(), db.ForeignKey('projects.id'))
 
-    def __repr__(self):
-        return self.model_name
+    # def __repr__(self):
+    #     return self.model_name
 
 
 class EmailReport(db.Model):
